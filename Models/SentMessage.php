@@ -4,9 +4,9 @@ require_once __DIR__ . '/../Record/Record.php';
 
 class SentMessage extends Record{
 
-  const DB = '';
-  const TABLE = '';
-  const PRIMARYKEY = '';
+  const DB = 'messages';
+  const TABLE = 'sent';
+  const PRIMARYKEY = 'id';
 
   public $id;
   public $msg_name;
