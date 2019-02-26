@@ -10,12 +10,12 @@ class SentMessage extends Record{
 
   public $id;
   public $msg_name;
-  public $to;
+  public $to = array();
   public $subject;
   public $body;
-  public $cc;
-  public $bcc;
-  public $attachements;
+  public $cc = array();
+  public $bcc = array();
+  public $attachements = array();
   public $flag;
   public $sent_by;
   public $created_date;
