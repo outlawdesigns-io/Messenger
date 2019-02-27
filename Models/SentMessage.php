@@ -23,4 +23,11 @@ class SentMessage extends Record{
   public function __construct($id = null){
     parent::__construct(self::DB,self::TABLE,self::PRIMARYKEY,$id);
   }
+  public static function isSent($msg_name,$flag){
+    $results = $GLOBALS['db']->database(self::DB)->table(self::TABLE)->select(self::PRIMARYKEY)->where("msg_name","=","'" . $msg_name . "'")->andWhere("flag","=","'" . $flag . "'")->get();
+    if(!mysqli_num_rows($results)){
+      return false;
+    }
+    return true;
+  }
 }

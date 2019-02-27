@@ -16,4 +16,7 @@ abstract class Messenger{
     }
     return false;
   }
+  public static function isSent($msg_name,$flag){
+    return SentMessage::isSent($msg_name,$flag);
+  }
 }
