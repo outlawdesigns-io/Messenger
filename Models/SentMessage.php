@@ -30,4 +30,20 @@ class SentMessage extends Record{
     }
     return true;
   }
+  public static function getAll(){
+      $data = array();
+      $ids = parent::getAll(self::DB,self::TABLE,self::PRIMARYKEY);
+      foreach($ids as $id){
+          $data[] = new self($id);
+      }
+      return $data;
+  }
+  public static function search($key,$value){
+    $data = array();
+    $ids = parent::search(self::DB,self::TABLE,self::PRIMARYKEY,$key,$value);
+    foreach($ids as $id){
+        $data[] = new self($id);
+    }
+    return $data;
+  }
 }
