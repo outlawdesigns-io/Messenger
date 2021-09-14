@@ -10,7 +10,7 @@ abstract class Messenger{
     $record = new SentMessage();
     try{
       $record->setFields($m)->create();
-      return new SendMessage($message);
+      return new SendMessage($message,getenv('SMTP_HOST'),getenv('SMTP_PORT'),getenv('SMTP_USER'),getenv('SMTP_PASS'));
     }catch(\Exception $e){
       throw new \Exception($e->getMessage());
     }
