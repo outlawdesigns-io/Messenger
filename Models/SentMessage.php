@@ -32,7 +32,7 @@ class SentMessage extends Record{
   }
   public static function getAll(){
       $data = array();
-      $ids = parent::getAll(self::DB,self::TABLE,self::PRIMARYKEY);
+      $ids = parent::_getAll(self::DB,self::TABLE,self::PRIMARYKEY);
       foreach($ids as $id){
           $data[] = new self($id);
       }
@@ -40,7 +40,7 @@ class SentMessage extends Record{
   }
   public static function search($key,$value){
     $data = array();
-    $ids = parent::search(self::DB,self::TABLE,self::PRIMARYKEY,$key,$value);
+    $ids = parent::_search(self::DB,self::TABLE,self::PRIMARYKEY,$key,$value);
     foreach($ids as $id){
         $data[] = new self($id);
     }
